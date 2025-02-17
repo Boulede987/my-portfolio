@@ -1,8 +1,10 @@
 'use client'
 
-
 import React, { useState } from 'react';
 import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight } from 'lucide-react';
+
+
+
 
 // Interface for project type
 interface Project {
@@ -113,23 +115,23 @@ const Portfolio: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
+      <section id="about" className="pt-32 pb-16 px-4">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold mb-6">
-            Hello, I'm <span className="text-blue-600">Your Name</span>
+            Hello, I'm <span className="text-blue-600">Alix</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">
             A brief professional description about yourself and what you do. 
             Highlight your key skills and what makes you unique.
           </p>
           <div className="flex gap-4 mt-8">
-            <a href="https://github.com" className="p-2 text-gray-600 hover:text-black">
+            <a href="https://github.com/Boulede987" className="p-2 text-gray-600 hover:text-black">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" className="p-2 text-gray-600 hover:text-black">
+            <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-gray-600 hover:text-black">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:your@email.com" className="p-2 text-gray-600 hover:text-black">
+            <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-gray-600 hover:text-black">
               <Mail size={24} />
             </a>
           </div>
