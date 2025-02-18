@@ -31,15 +31,13 @@ const Portfolio: React.FC = () => {
     {
       id: 1,
       name: "Projet JPO",
-      shortDescription: "Development of a presentation system for Open House Day with real-time analytics",
-      fullDescription: "I led the development of an interactive presentation system for the institution's Open House Day. The system included real-time visitor tracking, automated registration, and feedback collection. I was responsible for both frontend and backend development, ensuring a seamless user experience.",
-      technologies: ["React", "Node.js", "Socket.io"],
+      shortDescription: "Development of a presentation system for Open House Day with real-time analytics.",
+      fullDescription: "My first PHP developpement project. A system for Open House Day visitors to fill in their informations, wich would be inscribed in a database. Includes a MySQL database backend for data analysis puproses.",
+      technologies: ["PHP", "MySQL", "HTML"],
       period: "23/02/24 - 15/03/24",
       expanded: false,
       files: [
-        { name: "Cahier des charges.pdf", url: "/files/cahier-des-charges.pdf" },
-        { name: "Documentation technique.docx", url: "/files/documentation-technique.docx" },
-        { name: "Présentation.pptx", url: "/files/presentation.pptx" }
+        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
@@ -51,21 +49,19 @@ const Portfolio: React.FC = () => {
       period: "01/02/24 - 03/03/24",
       expanded: false,
       files: [
-        { name: "Schéma réseau.pdf", url: "/files/schema-reseau.pdf" },
-        { name: "Configuration des équipements.xlsx", url: "/files/configuration.xlsx" }
+        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
       id: 3,
       name: "Projet Fournil",
-      shortDescription: "Full-stack management system for a regional bakery chain with inventory and POS features",
+      shortDescription: "Full-stack management system for a local bakery with account creation and order placement system.",
       fullDescription: "Developed a comprehensive management system for a chain of bakeries. The system integrates inventory management, point-of-sale functionality, employee scheduling, and financial reporting. Used PHP for backend, MySQL for database, and JavaScript/jQuery for frontend interactivity.",
-      technologies: ["PHP", "MySQL", "JavaScript"],
+      technologies: ["PHP", "MySQL"],
       period: "12/04/24 - 30/04/24",
       expanded: false,
       files: [
-        { name: "Documentation utilisateur.pdf", url: "/files/documentation-utilisateur.pdf" },
-        { name: "Code source.zip", url: "/files/code-source.zip" }
+        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     }
   ]);
@@ -101,7 +97,7 @@ const Portfolio: React.FC = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b z-50">
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <span className="font-medium">Your Name</span>
+          <span className="font-medium">MIEHE Alix</span>
           <div className="flex gap-6">
             <a href="#about" className="text-gray-600 hover:text-black">About</a>
             <a href="#projects" className="text-gray-600 hover:text-black">Projects</a>
@@ -126,8 +122,7 @@ const Portfolio: React.FC = () => {
             Hello, I'm <span className="text-blue-600">Alix</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">
-            A brief professional description about yourself and what you do. 
-            Highlight your key skills and what makes you unique.
+          I'm a developer specializing in software and application development, with a strong foundation in networking and a keen interest in emerging technologies like AI development.
           </p>
           <div className="flex gap-4 mt-8">
             <a href="https://github.com/Boulede987" className="p-2 text-gray-600 hover:text-black">
@@ -168,9 +163,11 @@ const Portfolio: React.FC = () => {
                   </div>
                   
                   {/* Short Description - always visible */}
-                  <p className="text-gray-600 mb-4">{project.shortDescription}</p>
+                  {project.files.length>0 && (<p className="text-gray-600 mb-4">{project.shortDescription}</p>)}
+                  {project.files.length==0 && (<p className="text-gray-600 mb-4">{project.fullDescription}</p>)}
                   
                   {/* Expand/Collapse Button */}
+                  { project.files.length>0 && (
                   <button 
                     onClick={() => toggleProject(project.id)}
                     className="flex items-center text-blue-600 hover:text-blue-800"
@@ -178,10 +175,11 @@ const Portfolio: React.FC = () => {
                     {project.expanded ? 'Show less' : 'Show more'}
                     {project.expanded ? <ChevronUp size={16} className="ml-1"/> : <ChevronDown size={16} className="ml-1"/>}
                   </button>
+                  )}
                 </div>
                 
                 {/* Expanded Content - visible when expanded */}
-                {project.expanded && (
+                {project.expanded && project.files.length>0 && (
                   <div className="px-6 pb-6 pt-2 border-t bg-gray-50">
                     <h4 className="font-medium mb-3">Project Details</h4>
                     <p className="text-gray-600 mb-6">{project.fullDescription}</p>
