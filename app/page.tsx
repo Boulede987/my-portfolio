@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useRouter } from "next/navigation";
 import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight } from 'lucide-react';
 
 
@@ -22,6 +23,9 @@ interface Project {
 }
 
 const Portfolio: React.FC = () => {
+
+  const router = useRouter();
+
   // Project state
   const [projects, setProjects] = useState<Project[]>([
     {
@@ -72,7 +76,8 @@ const Portfolio: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string>('');
   
   // The correct password - in production, you would check this against a secure backend
-  const correctPassword = 'portfolio2025';
+  const correctPassword = 'portfolio2025';  // Congratulations! You found the password!
+                                            // Not much to see with it unfortunately :(
 
   const toggleProject = (id: number) => {
     setProjects(projects.map(project => 
@@ -84,7 +89,7 @@ const Portfolio: React.FC = () => {
     e.preventDefault();
     if (password === correctPassword) {
       // Redirect to the grid page
-      window.location.href = '/grid';
+      router.push("/pageGrid");
       setPasswordError('');
     } else {
       setPasswordError('Incorrect password. Please try again.');
