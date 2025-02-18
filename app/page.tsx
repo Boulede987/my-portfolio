@@ -2,10 +2,8 @@
 
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
-import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight } from 'lucide-react';
-
-
-
+import Image from "next/image"; // Import Next.js Image component
+import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight, Image as ImageIcon } from 'lucide-react';
 
 // Interface for project type
 interface Project {
@@ -16,6 +14,7 @@ interface Project {
   technologies: string[];
   period: string;
   expanded: boolean;
+  imageUrl?: string; // Optional image URL for the project
   files: {
     name: string;
     url: string;
@@ -30,36 +29,65 @@ const Portfolio: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: 1,
+      name: "Crédit Célèste",
+      shortDescription: "A project for the managment credits loaned by the (virtual) Crédit Célèste. Includes credit monthly cost calculation, and calculation the distribution of the payment between the Crédit Célèste and the salesman.",
+      fullDescription: "",
+      technologies: ["PHP", "MySQL", "HTML"],
+      period: "23/02/24 - 15/03/24",
+      expanded: false,
+      imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
+      files: [
+        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+      ]
+    },
+    {
+      id: 1,
+      name: "Ionic Angular Corss-plateform Mobile App",
+      shortDescription: "Includes research into different mobile cross-plateform developpement frameworks. A simple app featuring distant database connection via tokens.",
+      fullDescription: "During an internship, I was tasked with researching and finding the best cross-platform developpement framework for the needs of an application. After that initial research, I spent the remaining time developping the app in question.",
+      technologies: ["Ionic", "Capacitor", "Angular", "Typescript", "HTML"],
+      period: "23/02/24 - 15/03/24",
+      expanded: false,
+      imageUrl: "/images/storigmarik.png", // Add image URL
+      files: [
+        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+      ]
+    },
+    {
+      id: 1,
       name: "Projet JPO",
       shortDescription: "Development of a presentation system for Open House Day with real-time analytics.",
       fullDescription: "My first PHP developpement project. A system for Open House Day visitors to fill in their informations, wich would be inscribed in a database. Includes a MySQL database backend for data analysis puproses.",
       technologies: ["PHP", "MySQL", "HTML"],
       period: "23/02/24 - 15/03/24",
       expanded: false,
+      imageUrl: "/images/projetJPO.png", // Add image URL
       files: [
         { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
       id: 2,
-      name: "B3 Crédit Céleste",
-      shortDescription: "Implementation of secure Cisco networking solutions for a financial institution",
-      fullDescription: "Designed and implemented a complete networking solution for Crédit Céleste using Cisco technologies. The project involved setting up secure VLANs, implementing firewall rules, configuring routers, and ensuring PCI DSS compliance for financial data security.",
-      technologies: ["Cisco", "Networking", "Security"],
-      period: "01/02/24 - 03/03/24",
+      name: "Projet Fournil",
+      shortDescription: "A PHP website made for a local bakery with account creation and an order placement system.",
+      fullDescription: "A website made in accordance to a (virtual) client's demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
+      technologies: ["PHP", "MySQL"],
+      period: "12/04/24 - 30/04/24",
       expanded: false,
+      imageUrl: "/images/fournil.png", // Add image URL
       files: [
         { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
-      id: 3,
-      name: "Projet Fournil",
-      shortDescription: "Full-stack management system for a local bakery with account creation and order placement system.",
-      fullDescription: "Developed a comprehensive management system for a chain of bakeries. The system integrates inventory management, point-of-sale functionality, employee scheduling, and financial reporting. Used PHP for backend, MySQL for database, and JavaScript/jQuery for frontend interactivity.",
-      technologies: ["PHP", "MySQL"],
-      period: "12/04/24 - 30/04/24",
+      id: 1,
+      name: "Maximum number of objects",
+      shortDescription: "A simple program to find out how many objects a computer can create before running out of memory.",
+      fullDescription: "A simple program that continuously creates objects until the computer runs out of memory, and prints the number of objects created. Took around 9 hours to execute at the time.",
+      technologies: ["PHP", "MySQL", "HTML"],
+      period: "23/02/24 - 15/03/24",
       expanded: false,
+      imageUrl: "/images/nbObjets.png", // Add image URL
       files: [
         { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
@@ -145,68 +173,85 @@ const Portfolio: React.FC = () => {
           <div className="flex flex-col gap-6">
             {projects.map(project => (
               <div key={project.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
-                {/* Project Header - always visible */}
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold">{project.name}</h3>
-                      <div className="flex items-center mt-1 text-sm text-gray-500">
-                        <Calendar size={14} className="mr-1"/>
-                        <span>{project.period}</span>
-                      </div>
+                <div className="flex flex-col md:flex-row">
+                  {/* Project Image - If available */}
+                  {project.imageUrl && (
+                    <div className="w-full md:w-1/3 relative min-h-[200px]">
+                      <Image 
+                        src={project.imageUrl} 
+                        alt={`${project.name} preview`}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <div className="flex gap-2">
-                      {project.technologies.map((tech, index) => (
-                        <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Short Description - always visible */}
-                  {project.files.length>0 && (<p className="text-gray-600 mb-4">{project.shortDescription}</p>)}
-                  {project.files.length==0 && (<p className="text-gray-600 mb-4">{project.fullDescription}</p>)}
-                  
-                  {/* Expand/Collapse Button */}
-                  { project.files.length>0 && (
-                  <button 
-                    onClick={() => toggleProject(project.id)}
-                    className="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    {project.expanded ? 'Show less' : 'Show more'}
-                    {project.expanded ? <ChevronUp size={16} className="ml-1"/> : <ChevronDown size={16} className="ml-1"/>}
-                  </button>
                   )}
-                </div>
-                
-                {/* Expanded Content - visible when expanded */}
-                {project.expanded && project.files.length>0 && (
-                  <div className="px-6 pb-6 pt-2 border-t bg-gray-50">
-                    <h4 className="font-medium mb-3">Project Details</h4>
-                    <p className="text-gray-600 mb-6">{project.fullDescription}</p>
-                    
-                    {/* Files Section */}
-                    <div>
-                      <h4 className="font-medium mb-3 flex items-center">
-                        <FileText size={18} className="mr-2" />
-                        Project Files
-                      </h4>
-                      <ul className="space-y-2">
-                        {project.files.map((file, index) => (
-                          <li key={index}>
-                            <a 
-                              href={file.url}
-                              download
-                              className="flex items-center p-2 bg-white hover:bg-gray-100 rounded border"
-                            >
-                              <span className="flex-1">{file.name}</span>
-                              <Download size={16} className="text-gray-600" />
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
+                  
+                  {/* Project Content */}
+                  <div className={`w-full ${project.imageUrl ? 'md:w-2/3' : 'w-full'}`}>
+                    {/* Project Header - always visible */}
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-xl font-semibold">{project.name}</h3>
+                          <div className="flex items-center mt-1 text-sm text-gray-500">
+                            <Calendar size={14} className="mr-1"/>
+                            <span>{project.period}</span>
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          {project.technologies.map((tech, index) => (
+                            <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">{tech}</span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Short Description - always visible */}
+                      {project.files.length>0 && (<p className="text-gray-600 mb-4">{project.shortDescription}</p>)}
+                      {project.files.length==0 && (<p className="text-gray-600 mb-4">{project.fullDescription}</p>)}
+                      
+                      {/* Expand/Collapse Button */}
+                      { project.files.length>0 && (
+                      <button 
+                        onClick={() => toggleProject(project.id)}
+                        className="flex items-center text-blue-600 hover:text-blue-800"
+                      >
+                        {project.expanded ? 'Show less' : 'Show more'}
+                        {project.expanded ? <ChevronUp size={16} className="ml-1"/> : <ChevronDown size={16} className="ml-1"/>}
+                      </button>
+                      )}
                     </div>
+                    
+                    {/* Expanded Content - visible when expanded */}
+                    {project.expanded && project.files.length>0 && (
+                      <div className="px-6 pb-6 pt-2 border-t bg-gray-50">
+                        <h4 className="font-medium mb-3">Project Details</h4>
+                        <p className="text-gray-600 mb-6">{project.fullDescription}</p>
+                        
+                        {/* Files Section */}
+                        <div>
+                          <h4 className="font-medium mb-3 flex items-center">
+                            <FileText size={18} className="mr-2" />
+                            Project Files
+                          </h4>
+                          <ul className="space-y-2">
+                            {project.files.map((file, index) => (
+                              <li key={index}>
+                                <a 
+                                  href={file.url}
+                                  download
+                                  className="flex items-center p-2 bg-white hover:bg-gray-100 rounded border"
+                                >
+                                  <span className="flex-1">{file.name}</span>
+                                  <Download size={16} className="text-gray-600" />
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -221,7 +266,7 @@ const Portfolio: React.FC = () => {
             I'm always open to new opportunities and interesting projects.
           </p>
           <a 
-            href="mailto:your@email.com"
+            href="mailto:alixmiehe2004@gmail.com"
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
             Contact Me
