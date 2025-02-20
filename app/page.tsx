@@ -63,7 +63,7 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/storigmarik.png", // Add image URL
       files: [
-        { name: "photo-gallery.rar", url: "/files/photo-gallery.rar" }
+        //
       ]
     },
     {
