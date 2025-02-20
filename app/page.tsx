@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
-import Image from "next/image"; // Import Next.js Image component
+import Image from "next/image";
 import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight, Image as ImageIcon } from 'lucide-react';
 
-// Interface for project type
+// Interface remains the same
 interface Project {
   id: number;
   name: string;
@@ -14,7 +14,7 @@ interface Project {
   technologies: string[];
   period: string;
   expanded: boolean;
-  imageUrl?: string; // Optional image URL for the project
+  imageUrl?: string;
   files: {
     name: string;
     url: string;
@@ -22,11 +22,11 @@ interface Project {
 }
 
 const Portfolio: React.FC = () => {
-
   const router = useRouter();
-
-  // Project state
+  
+  // Projects state remains the same
   const [projects, setProjects] = useState<Project[]>([
+    // Your existing projects data remains unchanged
     {
       id: 1,
       name: "Athena",
@@ -92,16 +92,20 @@ const Portfolio: React.FC = () => {
         { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
       ]
     },
+    {
+      id: 6,
+      name: "Criées de la Cornouaille",
+      shortDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular.",
+      fullDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular.",
+      technologies: ["Symfony", "Doctrine", "MySQL", "Ionic", "Capacitor", "Angular"],
+      period: "12/04/24 - 30/04/24",
+      expanded: false,
+      imageUrl: "/images/CrieeCornouialle.png", // Add image URL
+      files: [
+        { name: "MCD.rar", url: "/files/MCD.rar" }
+      ]
+    },
   ]);
-
-  // Password modal state
-  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
-  const [password, setPassword] = useState<string>('');
-  const [passwordError, setPasswordError] = useState<string>('');
-  
-  // The correct password - in production, you would check this against a secure backend
-  // const correctPassword = 'portfolio2025';  // Congratulations! You found the password!
-                                            // Not much to see with it unfortunately :(
 
   const toggleProject = (id: number) => {
     setProjects(projects.map(project => 
@@ -109,72 +113,53 @@ const Portfolio: React.FC = () => {
     ));
   };
 
-  // const handlePasswordSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (password === correctPassword) {
-  //     // Redirect to the grid page
-  //     router.push("/pageGrid");
-  //     setPasswordError('');
-  //   } else {
-  //     setPasswordError('Incorrect password. Please try again.');
-  //   }
-  // };
-
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen bg-slate-900 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b z-50">
+      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-sm border-b border-emerald-800/20 z-50">
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <span className="font-medium">MIEHE Alix</span>
+          <span className="font-medium text-emerald-400">MIEHE Alix</span>
           <div className="flex gap-6">
-            <a href="#about" className="text-gray-600 hover:text-black">About</a>
-            <a href="#projects" className="text-gray-600 hover:text-black">Projects</a>
-            <a href="#contact" className="text-gray-600 hover:text-black">Contact</a>
-            
-            {/* Discrete Admin Link */}
-            {/* <button 
-              onClick={() => setShowPasswordModal(true)}
-              className="text-gray-400 hover:text-gray-600 flex items-center"
-              aria-label="Admin Access"
-            >
-              <Lock size={16} />
-            </button> */}
+            <a href="#about" className="text-slate-400 hover:text-emerald-400 transition-colors">About</a>
+            <a href="#projects" className="text-slate-400 hover:text-emerald-400 transition-colors">Projects</a>
+            <a href="#contact" className="text-slate-400 hover:text-emerald-400 transition-colors">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="pt-32 pb-16 px-4">
-        <div className="max-w-5xl mx-auto">
+      <section id="about" className="pt-32 pb-16 px-4 relative">
+        <div className="absolute -top-8 -left-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="max-w-5xl mx-auto relative">
           <h1 className="text-4xl font-bold mb-6">
-            Hello, I'm <span className="text-blue-600">Alix</span>
+            Hello, I'm <span className="text-emerald-400">Alix</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl">
-          I'm a developer specializing in software and application development, with a strong foundation in networking and a keen interest in emerging technologies like AI development.
+          <p className="text-xl text-slate-400 max-w-2xl">
+            I'm a developer specializing in software and application development, with a strong foundation in networking and a keen interest in emerging technologies like AI development.
           </p>
           <div className="flex gap-4 mt-8">
-            <a href="https://github.com/Boulede987" className="p-2 text-gray-600 hover:text-black">
+            <a href="https://github.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-gray-600 hover:text-black">
+            <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-gray-600 hover:text-black">
+            <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
               <Mail size={24} />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Projects Section with Previews and Downloads */}
-      <section id="projects" className="py-16 bg-gray-50 px-4">
+      {/* Projects Section */}
+      <section id="projects" className="py-16 bg-slate-800/50 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Selected Projects</h2>
+          <h2 className="text-3xl font-bold mb-12 text-white">Selected Projects</h2>
           <div className="flex flex-col gap-6">
             {projects.map(project => (
-              <div key={project.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div key={project.id} className="bg-slate-800 rounded-lg shadow-lg overflow-hidden hover:ring-1 hover:ring-emerald-500/50 transition-all">
                 <div className="flex flex-col md:flex-row">
-                  {/* Project Image - If available */}
+                  {/* Project Image */}
                   {project.imageUrl && (
                     <div className="w-full md:w-1/3 relative min-h-[200px]">
                       <Image 
@@ -188,56 +173,59 @@ const Portfolio: React.FC = () => {
                   
                   {/* Project Content */}
                   <div className={`w-full ${project.imageUrl ? 'md:w-2/3' : 'w-full'}`}>
-                    {/* Project Header - always visible */}
                     <div className="p-6">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold">{project.name}</h3>
-                          <div className="flex items-center mt-1 text-sm text-gray-500">
+                          <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+                          <div className="flex items-center mt-1 text-sm text-slate-400">
                             <Calendar size={14} className="mr-1"/>
                             <span>{project.period}</span>
                           </div>
                         </div>
                         <div className="flex gap-2">
                           {project.technologies.map((tech, index) => (
-                            <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">{tech}</span>
+                            <span key={index} className="px-3 py-1 bg-slate-700 text-emerald-400 rounded-full text-sm">
+                              {tech}
+                            </span>
                           ))}
                         </div>
                       </div>
                       
-                      {/* Short Description - always visible */}
-                      {project.files.length>0 && (<p className="text-gray-600 mb-4">{project.shortDescription}</p>)}
-                      {project.files.length==0 && (
+                      {/* Description */}
+                      {project.files.length > 0 && (
+                        <p className="text-slate-400 mb-4">{project.shortDescription}</p>
+                      )}
+                      {project.files.length === 0 && (
                         <div 
-                          className="text-gray-600 mb-4"
+                          className="text-slate-400 mb-4"
                           dangerouslySetInnerHTML={{ __html: project.fullDescription }}
                         />
                       )}
                       
                       {/* Expand/Collapse Button */}
-                      { project.files.length>0 && (
-                      <button 
-                        onClick={() => toggleProject(project.id)}
-                        className="flex items-center text-blue-600 hover:text-blue-800"
-                      >
-                        {project.expanded ? 'Show less' : 'Show more'}
-                        {project.expanded ? <ChevronUp size={16} className="ml-1"/> : <ChevronDown size={16} className="ml-1"/>}
-                      </button>
+                      {project.files.length > 0 && (
+                        <button 
+                          onClick={() => toggleProject(project.id)}
+                          className="flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                          {project.expanded ? 'Show less' : 'Show more'}
+                          {project.expanded ? <ChevronUp size={16} className="ml-1"/> : <ChevronDown size={16} className="ml-1"/>}
+                        </button>
                       )}
                     </div>
                     
-                    {/* Expanded Content - visible when expanded */}
-                    {project.expanded && project.files.length>0 && (
-                      <div className="px-6 pb-6 pt-2 border-t bg-gray-50">
-                        <h4 className="font-medium mb-3">Project Details</h4>
+                    {/* Expanded Content */}
+                    {project.expanded && project.files.length > 0 && (
+                      <div className="px-6 pb-6 pt-2 border-t border-slate-700 bg-slate-900/50">
+                        <h4 className="font-medium mb-3 text-white">Project Details</h4>
                         <div 
-                          className="text-gray-600 mb-6"
+                          className="text-slate-400 mb-6"
                           dangerouslySetInnerHTML={{ __html: project.fullDescription }}
                         />
                         
                         {/* Files Section */}
                         <div>
-                          <h4 className="font-medium mb-3 flex items-center">
+                          <h4 className="font-medium mb-3 flex items-center text-white">
                             <FileText size={18} className="mr-2" />
                             Project Files
                           </h4>
@@ -247,10 +235,10 @@ const Portfolio: React.FC = () => {
                                 <a 
                                   href={file.url}
                                   download
-                                  className="flex items-center p-2 bg-white hover:bg-gray-100 rounded border"
+                                  className="flex items-center p-2 bg-slate-800 hover:bg-slate-700 rounded border border-slate-600 text-slate-400 hover:text-emerald-400 transition-colors"
                                 >
                                   <span className="flex-1">{file.name}</span>
-                                  <Download size={16} className="text-gray-600" />
+                                  <Download size={16} />
                                 </a>
                               </li>
                             ))}
@@ -269,64 +257,18 @@ const Portfolio: React.FC = () => {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-white">Get in Touch</h2>
+          <p className="text-slate-400 mb-8">
             I'm always open to new opportunities and interesting projects.
           </p>
           <a 
             href="mailto:alixmiehe2004@gmail.com"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
           >
             Contact Me
           </a>
         </div>
       </section>
-      
-      {/* Password Modal */}
-      {/* {showPasswordModal && (
-        <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 className="text-xl font-semibold mb-4">Admin Access</h3>
-            <form onSubmit={handlePasswordSubmit}>
-              <div className="mb-4">
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter password"
-                />
-                {passwordError && (
-                  <p className="mt-2 text-sm text-red-600">{passwordError}</p>
-                )}
-              </div>
-              <div className="flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowPasswordModal(false);
-                    setPassword('');
-                    setPasswordError('');
-                  }}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-800"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center"
-                >
-                  Access <ArrowRight size={16} className="ml-1" />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };
