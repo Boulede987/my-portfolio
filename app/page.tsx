@@ -29,32 +29,45 @@ const Portfolio: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: 1,
+      name: "Athena",
+      shortDescription: "I developped additionnal features for the Athena Open Source sofware during an internship.",
+      fullDescription: "A local school needed a way to produce physical cards for its students, as a wayto identify them. It regularly accepts interns to develop the project. It is a C# application with a SQLite backend. It was fairly developped when I arrived, and my work consisted in adding the features as the schoolasked for them as well as correcting bugs. <a href=https://github.com/College-Caroline-Aigle/Athena>Link.<\a>",
+      technologies: ["C#", "SQLite", "GitHub"],
+      period: "23/02/24 - 15/03/24",
+      expanded: false,
+      imageUrl: "/images/Athena.png", // Add image URL
+      files: [
+        //
+      ]
+    },
+    {
+      id: 2,
       name: "Crédit Célèste",
       shortDescription: "A project for the managment credits loaned by the (virtual) Crédit Célèste. Includes credit monthly cost calculation, and calculation the distribution of the payment between the Crédit Célèste and the salesman.",
-      fullDescription: "",
-      technologies: ["PHP", "MySQL", "HTML"],
+      fullDescription: "With a C# front end and a windows server backend, this application lets the user register clients, vehicles and loans. It can afterwards calculate how much money the salesman that made the credit sales has made, as well as how much the Crédit Célèste hase made monthly.",
+      technologies: ["PHP", "MySQL", "HTML", "GitHub"],
       period: "23/02/24 - 15/03/24",
       expanded: false,
       imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
       files: [
-        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+        { name: "Contexte.rar", url: "/files/Contexte.rar" }
       ]
     },
     {
-      id: 1,
+      id: 3,
       name: "Ionic Angular Corss-plateform Mobile App",
       shortDescription: "Includes research into different mobile cross-plateform developpement frameworks. A simple app featuring distant database connection via tokens.",
-      fullDescription: "During an internship, I was tasked with researching and finding the best cross-platform developpement framework for the needs of an application. After that initial research, I spent the remaining time developping the app in question.",
+      fullDescription: "During an internship, I was tasked with researching and finding the best cross-platform developpement framework for the needs of an application. After that initial research, I spent the remaining time developping the application in question.",
       technologies: ["Ionic", "Capacitor", "Angular", "Typescript", "HTML"],
       period: "23/02/24 - 15/03/24",
       expanded: false,
       imageUrl: "/images/storigmarik.png", // Add image URL
       files: [
-        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+        { name: "photo-gallery.rar", url: "/files/photo-gallery.rar" }
       ]
     },
     {
-      id: 1,
+      id: 4,
       name: "Projet JPO",
       shortDescription: "Development of a presentation system for Open House Day with real-time analytics.",
       fullDescription: "My first PHP developpement project. A system for Open House Day visitors to fill in their informations, wich would be inscribed in a database. Includes a MySQL database backend for data analysis puproses.",
@@ -67,7 +80,7 @@ const Portfolio: React.FC = () => {
       ]
     },
     {
-      id: 2,
+      id: 5,
       name: "Projet Fournil",
       shortDescription: "A PHP website made for a local bakery with account creation and an order placement system.",
       fullDescription: "A website made in accordance to a (virtual) client's demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
@@ -76,22 +89,9 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/fournil.png", // Add image URL
       files: [
-        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+        { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
       ]
     },
-    {
-      id: 1,
-      name: "Maximum number of objects",
-      shortDescription: "A simple program to find out how many objects a computer can create before running out of memory.",
-      fullDescription: "A simple program that continuously creates objects until the computer runs out of memory, and prints the number of objects created. Took around 9 hours to execute at the time.",
-      technologies: ["PHP", "MySQL", "HTML"],
-      period: "23/02/24 - 15/03/24",
-      expanded: false,
-      imageUrl: "/images/nbObjets.png", // Add image URL
-      files: [
-        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
-      ]
-    }
   ]);
 
   // Password modal state
@@ -100,7 +100,7 @@ const Portfolio: React.FC = () => {
   const [passwordError, setPasswordError] = useState<string>('');
   
   // The correct password - in production, you would check this against a secure backend
-  const correctPassword = 'portfolio2025';  // Congratulations! You found the password!
+  // const correctPassword = 'portfolio2025';  // Congratulations! You found the password!
                                             // Not much to see with it unfortunately :(
 
   const toggleProject = (id: number) => {
@@ -109,16 +109,16 @@ const Portfolio: React.FC = () => {
     ));
   };
 
-  const handlePasswordSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password === correctPassword) {
-      // Redirect to the grid page
-      router.push("/pageGrid");
-      setPasswordError('');
-    } else {
-      setPasswordError('Incorrect password. Please try again.');
-    }
-  };
+  // const handlePasswordSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (password === correctPassword) {
+  //     // Redirect to the grid page
+  //     router.push("/pageGrid");
+  //     setPasswordError('');
+  //   } else {
+  //     setPasswordError('Incorrect password. Please try again.');
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -132,13 +132,13 @@ const Portfolio: React.FC = () => {
             <a href="#contact" className="text-gray-600 hover:text-black">Contact</a>
             
             {/* Discrete Admin Link */}
-            <button 
+            {/* <button 
               onClick={() => setShowPasswordModal(true)}
               className="text-gray-400 hover:text-gray-600 flex items-center"
               aria-label="Admin Access"
             >
               <Lock size={16} />
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>
@@ -207,7 +207,12 @@ const Portfolio: React.FC = () => {
                       
                       {/* Short Description - always visible */}
                       {project.files.length>0 && (<p className="text-gray-600 mb-4">{project.shortDescription}</p>)}
-                      {project.files.length==0 && (<p className="text-gray-600 mb-4">{project.fullDescription}</p>)}
+                      {project.files.length==0 && (
+                        <div 
+                          className="text-gray-600 mb-4"
+                          dangerouslySetInnerHTML={{ __html: project.fullDescription }}
+                        />
+                      )}
                       
                       {/* Expand/Collapse Button */}
                       { project.files.length>0 && (
@@ -225,7 +230,10 @@ const Portfolio: React.FC = () => {
                     {project.expanded && project.files.length>0 && (
                       <div className="px-6 pb-6 pt-2 border-t bg-gray-50">
                         <h4 className="font-medium mb-3">Project Details</h4>
-                        <p className="text-gray-600 mb-6">{project.fullDescription}</p>
+                        <div 
+                          className="text-gray-600 mb-6"
+                          dangerouslySetInnerHTML={{ __html: project.fullDescription }}
+                        />
                         
                         {/* Files Section */}
                         <div>
@@ -275,7 +283,7 @@ const Portfolio: React.FC = () => {
       </section>
       
       {/* Password Modal */}
-      {showPasswordModal && (
+      {/* {showPasswordModal && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
             <h3 className="text-xl font-semibold mb-4">Admin Access</h3>
@@ -318,7 +326,7 @@ const Portfolio: React.FC = () => {
             </form>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
