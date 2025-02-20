@@ -81,7 +81,7 @@ const Portfolio: React.FC = () => {
       id: 5,
       name: "Projet Fournil",
       shortDescription: "A PHP website made for a local bakery with account creation and an order placement system.",
-      fullDescription: "A website made in accordance to a (virtual) client's demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
+      fullDescription: "A website made in accordance to a (virtual) client&#39;s demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
       technologies: ["PHP", "MySQL"],
       period: "12/04/24 - 30/04/24",
       expanded: false,
@@ -130,10 +130,10 @@ const Portfolio: React.FC = () => {
         <div className="absolute -top-8 -left-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-5xl mx-auto relative">
           <h1 className="text-4xl font-bold mb-6">
-            Hello, I'm <span className="text-emerald-400">Alix</span>
+            Hello, I&apos;m <span className="text-emerald-400">Alix</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-2xl">
-            I'm a developer specializing in software and application development, with a strong foundation in networking and a keen interest in emerging technologies like AI development.
+            I&apos;m a developer specializing in software and application development, with a strong foundation in networking and a keen interest in emerging technologies like AI development.
           </p>
           <div className="flex gap-4 mt-8">
             <a href="https://github.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
@@ -257,7 +257,7 @@ const Portfolio: React.FC = () => {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Get in Touch</h2>
           <p className="text-slate-400 mb-8">
-            I'm always open to new opportunities and interesting projects.
+            I&apos;m always open to new opportunities and interesting projects.
           </p>
           <a 
             href="mailto:alixmiehe2004@gmail.com"
