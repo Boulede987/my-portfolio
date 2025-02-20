@@ -145,6 +145,9 @@ const Portfolio: React.FC = () => {
             <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
               <Mail size={24} />
             </a>
+            <a href="/files/CV_Alix_Miehe.pdf" download className="p-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center">
+              <Download size={20} className="mr-2" /> Download CV
+            </a>
           </div>
         </div>
       </section>
