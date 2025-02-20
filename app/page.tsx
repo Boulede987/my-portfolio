@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Lock, ArrowRight, Image as ImageIcon } from 'lucide-react';
+import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar } from 'lucide-react';
 
 // Interface remains the same
 interface Project {
@@ -22,7 +22,6 @@ interface Project {
 }
 
 const Portfolio: React.FC = () => {
-  const router = useRouter();
   
   // Projects state remains the same
   const [projects, setProjects] = useState<Project[]>([
