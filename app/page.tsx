@@ -57,7 +57,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "Includes research into different mobile cross-plateform developpement frameworks. A simple app featuring distant database connection via tokens.",
       fullDescription: "During an internship, I was tasked with researching and finding the best cross-platform developpement framework for the needs of an application. After that initial research, I spent the remaining time developping the application in question.",
       technologies: ["Ionic", "Capacitor", "Angular", "Typescript", "HTML"],
-      period: "23/05/24 - 01/09/24",
+      period: "01/05/24 - 01/09/24",
       expanded: false,
       imageUrl: "/images/storigmarik.png", // Add image URL
       files: [
@@ -106,8 +106,8 @@ const Portfolio: React.FC = () => {
     {
       id: 7,
       name: "pyVeil",
-      shortDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
-      fullDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
+      shortDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON API and save them. I can then run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
+      fullDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON API and save them. I can then run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
       technologies: ["Symfony", "Doctrine", "MySQL", "Ionic", "Capacitor", "Angular"],
       period: "10/02/25 - today",
       expanded: false,
