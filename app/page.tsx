@@ -103,6 +103,19 @@ const Portfolio: React.FC = () => {
         { name: "MCD.rar", url: "/files/MCD.rar" }
       ]
     },
+    {
+      id: 7,
+      name: "pyVeil",
+      shortDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
+      fullDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
+      technologies: ["Symfony", "Doctrine", "MySQL", "Ionic", "Capacitor", "Angular"],
+      period: "12/04/24 - 30/04/24",
+      expanded: false,
+      imageUrl: "/images/pyVeilImg.png", // Add image URL
+      files: [
+        // { name: "MCD.rar", url: "/files/MCD.rar" }
+      ]
+    },
   ]);
 
   const toggleProject = (id: number) => {
