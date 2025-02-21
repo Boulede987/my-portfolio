@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "I developped additionnal features for the Athena Open Source sofware during an internship.",
       fullDescription: "A local school needed a way to produce physical cards for its students, as a wayto identify them. It regularly accepts interns to develop the project. It is a C# application with a SQLite backend. It was fairly developped when I arrived, and my work consisted in adding the features as the schoolasked for them as well as correcting bugs. <a href=https://github.com/College-Caroline-Aigle/Athena>Link.<\a>",
       technologies: ["C#", "SQLite", "GitHub"],
-      period: "23/02/24 - 15/03/24",
+      period: "06/01/24 - 07/02/24",
       expanded: false,
       imageUrl: "/images/Athena.png", // Add image URL
       files: [
@@ -44,7 +44,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "A project for the managment credits loaned by the (virtual) Crédit Célèste. Includes credit monthly cost calculation, and calculation the distribution of the payment between the Crédit Célèste and the salesman.",
       fullDescription: "With a C# front end and a windows server backend, this application lets the user register clients, vehicles and loans. It can afterwards calculate how much money the salesman that made the credit sales has made, as well as how much the Crédit Célèste hase made monthly.",
       technologies: ["PHP", "MySQL", "HTML", "GitHub"],
-      period: "23/02/24 - 15/03/24",
+      period: "02/10/24 - today",
       expanded: false,
       imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
       files: [
@@ -57,7 +57,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "Includes research into different mobile cross-plateform developpement frameworks. A simple app featuring distant database connection via tokens.",
       fullDescription: "During an internship, I was tasked with researching and finding the best cross-platform developpement framework for the needs of an application. After that initial research, I spent the remaining time developping the application in question.",
       technologies: ["Ionic", "Capacitor", "Angular", "Typescript", "HTML"],
-      period: "23/02/24 - 15/03/24",
+      period: "23/05/24 - 01/09/24",
       expanded: false,
       imageUrl: "/images/storigmarik.png", // Add image URL
       files: [
@@ -83,7 +83,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "A PHP website made for a local bakery with account creation and an order placement system.",
       fullDescription: "A website made in accordance to a (virtual) client&#39;s demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
       technologies: ["PHP", "MySQL"],
-      period: "12/04/24 - 30/04/24",
+      period: "12/04/24 - 15/07/24",
       expanded: false,
       imageUrl: "/images/fournil.png", // Add image URL
       files: [
@@ -96,7 +96,7 @@ const Portfolio: React.FC = () => {
       shortDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular.",
       fullDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular.",
       technologies: ["Symfony", "Doctrine", "MySQL", "Ionic", "Capacitor", "Angular"],
-      period: "12/04/24 - 30/04/24",
+      period: "15/11/24 - today",
       expanded: false,
       imageUrl: "/images/CrieeCornouialle.png", // Add image URL
       files: [
@@ -109,9 +109,9 @@ const Portfolio: React.FC = () => {
       shortDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
       fullDescription: "Using python and the ollama library, I extract google search results from the google custom search engine JSON APIand save them. I can the run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
       technologies: ["Symfony", "Doctrine", "MySQL", "Ionic", "Capacitor", "Angular"],
-      period: "12/04/24 - 30/04/24",
+      period: "10/02/25 - today",
       expanded: false,
-      imageUrl: "/images/pyVeilImg.png", // Add image URL
+      imageUrl: "/images/pyVeil_img.png", // Add image URL
       files: [
         // { name: "MCD.rar", url: "/files/MCD.rar" }
       ]
