@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from "next/image";
-import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar } from 'lucide-react';
+import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Award } from 'lucide-react';
 
 // Interface remains the same
 interface Project {
@@ -19,6 +19,19 @@ interface Project {
     url: string;
   }[];
 }
+
+interface Certification {
+  id: number;
+  name: string;
+  issuer: string;
+  date: string;
+  description: string;
+  imageUrl?: string;
+  fileUrl: string;
+}
+
+
+
 
 const Portfolio: React.FC = () => {
   
@@ -48,7 +61,7 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
       files: [
-        { name: "Contexte.rar", url: "/files/Contexte.rar" }
+        // { name: "Contexte.rar", url: "/files/Contexte.rar" }
       ]
     },
     {
@@ -74,7 +87,7 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/projetJPO.png", // Add image URL
       files: [
-        { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+        // { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
@@ -87,7 +100,7 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/fournil.png", // Add image URL
       files: [
-        { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
+        // { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
       ]
     },
     {
@@ -100,7 +113,7 @@ const Portfolio: React.FC = () => {
       expanded: false,
       imageUrl: "/images/CrieeCornouialle.png", // Add image URL
       files: [
-        { name: "MCD.rar", url: "/files/MCD.rar" }
+        // { name: "MCD.rar", url: "/files/MCD.rar" }
       ]
     },
     {
@@ -118,6 +131,47 @@ const Portfolio: React.FC = () => {
     },
   ]);
 
+
+
+
+
+
+  const [certifications, setCertifications] = useState<Certification[]>([
+    {
+      id: 1,
+      name: "AWS Certified Solutions Architect",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      description: "",
+      imageUrl: "/images/alixmiehe_1sio1_attestationdesuivi_secnumacademie.png",
+      fileUrl: "/files/alixmiehe_1sio1_attestationdesuivi_secnumacademie.pdf"
+    },
+    {
+      id: 1,
+      name: "Cybersecurity Essentials",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      description: "",
+      imageUrl: "/images/Cybersecurity_Essentials_Badge20240125-29-uar4bx.png",
+      fileUrl: "/files/Cybersecurity_Essentials_Badge20240125-29-uar4bx.pdf"
+    },
+    {
+      id: 1,
+      name: "Introduction To Cybersecurity",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      description: "",
+      imageUrl: "/images/introduction_to_cybersecurity_badge20231123-29-uhtua0.png",
+      fileUrl: "/files/introduction_to_cybersecurity_badge20231123-29-uhtua0.pdf"
+    },
+  ]);
+
+
+
+
+
+
+
   const toggleProject = (id: number) => {
     setProjects(projects.map(project => 
       project.id === id ? {...project, expanded: !project.expanded} : project
@@ -133,6 +187,7 @@ const Portfolio: React.FC = () => {
           <div className="flex gap-6">
             <a href="#about" className="text-slate-400 hover:text-emerald-400 transition-colors">About</a>
             <a href="#projects" className="text-slate-400 hover:text-emerald-400 transition-colors">Projects</a>
+            <a href="#certifications" className="text-slate-400 hover:text-emerald-400 transition-colors">Certifications</a>
             <a href="#contact" className="text-slate-400 hover:text-emerald-400 transition-colors">Contact</a>
           </div>
         </div>
@@ -261,6 +316,53 @@ const Portfolio: React.FC = () => {
                       </div>
                     )}
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section - NEW */}
+      <section id="certifications" className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-white">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map(cert => (
+              <div key={cert.id} className="bg-slate-800 rounded-lg shadow-lg overflow-hidden hover:ring-1 hover:ring-emerald-500/50 transition-all flex flex-col h-full">
+                {/* Certificate Image */}
+                {cert.imageUrl && (
+                  <div className="w-full h-48 relative">
+                    <Image 
+                      src={cert.imageUrl} 
+                      alt={`${cert.name} certificate`}
+                      fill
+                      className="object-cover object-center"
+                    />
+                  </div>
+                )}
+                
+                {/* Certificate Content */}
+                <div className="p-6 flex-grow flex flex-col">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-1">{cert.name}</h3>
+                    <div className="flex justify-between items-center">
+                      <span className="text-emerald-400">{cert.issuer}</span>
+                      <span className="text-sm text-slate-400">{cert.date}</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-400 mb-6 flex-grow">{cert.description}</p>
+                  
+                  <a 
+                    href={cert.fileUrl}
+                    download
+                    className="mt-auto flex items-center justify-center gap-2 p-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-slate-200 hover:text-white transition-colors"
+                  >
+                    <Award size={18} />
+                    <span>View Certificate</span>
+                    <Download size={18} />
+                  </a>
                 </div>
               </div>
             ))}
