@@ -136,7 +136,7 @@ const Portfolio: React.FC = () => {
 
 
 
-  const [certifications, setCertifications] = useState<Certification[]>([
+  const [certifications] = useState<Certification[]>([
     {
       id: 1,
       name: "AWS Certified Solutions Architect",
