@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from "next/image";
-import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Award } from 'lucide-react';
+import { Github, Mail, Linkedin, Download, ChevronDown, ChevronUp, FileText, Calendar, Award, Scale, Shield } from 'lucide-react';
 
 // Interface remains the same
 interface Project {
@@ -385,6 +385,79 @@ const Portfolio: React.FC = () => {
           </a>
         </div>
       </section>
+
+
+
+
+      {/* Mentions Légales Section - NEW */}
+      <section id="legal" className="py-16 bg-slate-800/50 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center mb-8">
+            <Scale size={24} className="text-emerald-400 mr-3" />
+            <h2 className="text-3xl font-bold text-white">Mentions Légales</h2>
+          </div>
+          
+          <div className="bg-slate-800 p-6 rounded-lg mb-6">
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                <Shield size={20} className="mr-2 text-emerald-400" />
+                Éditeur du site
+              </h3>
+              <div className="pl-6 text-slate-300">
+                <p><strong>Nom :</strong> Alix MIEHE</p>
+                <p><strong>Adresse :</strong> 29 Route du Petit Bois, 29000 QUIMPER</p>
+                <p><strong>Email :</strong> alixmiehe2004@gmail.com</p>
+                <p><strong>Téléphone :</strong> +33 6 XX XX XX XX</p>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Hébergement</h3>
+              <div className="pl-6 text-slate-300">
+                <p><strong>Société :</strong> OVHcloud</p>
+                <p><strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
+                <p><strong>Site web :</strong> <a href="https://www.ovhcloud.com" className="text-emerald-400 hover:underline">www.ovhcloud.com</a></p>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Propriété intellectuelle</h3>
+              <div className="pl-6 text-slate-300">
+                <p>L&apos;ensemble du contenu de ce site (structure, textes, images, etc.) est la propriété d&apos;Alix MIEHE et est protégé par les lois relatives à la propriété intellectuelle.</p>
+                <p>Toute reproduction, même partielle, est strictement interdite sans autorisation préalable.</p>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Données personnelles</h3>
+              <div className="pl-6 text-slate-300">
+                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</p>
+                <p>Ce site ne collecte que les données nécessaires à son bon fonctionnement (statistiques de visite anonymisées).</p>
+                <p>Pour exercer vos droits, veuillez me contacter par email à l&apos;adresse suivante : alixmiehe2004@gmail.com</p>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">Cookies</h3>
+              <div className="pl-6 text-slate-300">
+                <p>Ce site utilise des cookies techniques essentiels au bon fonctionnement du site. Ces cookies ne collectent pas d&apos;informations personnelles permettant de vous identifier.</p>
+                <p>Vous pouvez configurer votre navigateur pour refuser l&apos;utilisation de cookies. Cependant, cela pourrait affecter le fonctionnement du site.</p>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-slate-400 text-center mt-8">
+            Dernière mise à jour : 8 mars 2025
+          </p>
+        </div>
+      </section>
+      
+      {/* Footer with copyright */}
+      <footer className="py-8 bg-slate-900 border-t border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 text-center text-slate-500">
+          <p>&copy; {new Date().getFullYear()} Alix MIEHE. Tous droits réservés.</p>
+        </div>
+      </footer>
     </div>
   );
 };
