@@ -189,6 +189,7 @@ const Portfolio: React.FC = () => {
             <a href="#projects" className="text-slate-400 hover:text-emerald-400 transition-colors">Projects</a>
             <a href="#certifications" className="text-slate-400 hover:text-emerald-400 transition-colors">Certifications</a>
             <a href="#contact" className="text-slate-400 hover:text-emerald-400 transition-colors">Contact</a>
+            <a href="#legal" className="text-slate-400 hover:text-emerald-400 transition-colors">Legal Notice</a>
           </div>
         </div>
       </nav>
@@ -389,73 +390,72 @@ const Portfolio: React.FC = () => {
 
 
 
-      {/* Mentions Légales Section - NEW */}
+      {/* Legal Notice Section - NEW */}
       <section id="legal" className="py-16 bg-slate-800/50 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center mb-8">
             <Scale size={24} className="text-emerald-400 mr-3" />
-            <h2 className="text-3xl font-bold text-white">Mentions Légales</h2>
+            <h2 className="text-3xl font-bold text-white">Legal Notice</h2>
           </div>
           
           <div className="bg-slate-800 p-6 rounded-lg mb-6">
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
                 <Shield size={20} className="mr-2 text-emerald-400" />
-                Éditeur du site
+                Website Publisher
               </h3>
               <div className="pl-6 text-slate-300">
-                <p><strong>Nom :</strong> Alix MIEHE</p>
-                <p><strong>Adresse :</strong> 29 Route du Petit Bois, 29000 QUIMPER</p>
-                <p><strong>Email :</strong> alixmiehe2004@gmail.com</p>
-                <p><strong>Téléphone :</strong> +33 6 XX XX XX XX</p>
+                <p><strong>Name:</strong> Alix MIEHE</p>
+                <p><strong>Address:</strong> 6 Rue Curie, HOCHFELDEN 67270</p>
+                <p><strong>Email:</strong> alixmiehe2004@gmail.com</p>
+                <p><strong>Phone:</strong> +33 6 44 87 67 57</p>
               </div>
             </div>
             
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-white mb-3">Hébergement</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Hosting</h3>
               <div className="pl-6 text-slate-300">
-                <p><strong>Société :</strong> OVHcloud</p>
-                <p><strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
-                <p><strong>Site web :</strong> <a href="https://www.ovhcloud.com" className="text-emerald-400 hover:underline">www.ovhcloud.com</a></p>
+                <p><strong>Company:</strong> Vercel</p>
+                <p><strong>Address:</strong> 650 California St, San Francisco, CA 94108, États-Unis </p>
+                <p><strong>Website:</strong> <a href="https://www.vercel.com" className="text-emerald-400 hover:underline">www.ovhcloud.com</a></p>
               </div>
             </div>
+            
+            {/* <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Intellectual Property</h3>
+              <div className="pl-6 text-slate-300">
+                <p>All content on this website (structure, text, images, etc.) is the property of Alix MIEHE and is protected by intellectual property laws.</p>
+                <p>Any reproduction, even partial, is strictly prohibited without prior authorization.</p>
+              </div>
+            </div> */}
             
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-white mb-3">Propriété intellectuelle</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Personal Data</h3>
               <div className="pl-6 text-slate-300">
-                <p>L&apos;ensemble du contenu de ce site (structure, textes, images, etc.) est la propriété d&apos;Alix MIEHE et est protégé par les lois relatives à la propriété intellectuelle.</p>
-                <p>Toute reproduction, même partielle, est strictement interdite sans autorisation préalable.</p>
+                <p>In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify, and delete your personal data.</p>
+                <p>To exercise your rights, please contact me by email at: alixmiehe2004@gmail.com</p>
               </div>
             </div>
             
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-white mb-3">Données personnelles</h3>
-              <div className="pl-6 text-slate-300">
-                <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données personnelles.</p>
-                <p>Ce site ne collecte que les données nécessaires à son bon fonctionnement (statistiques de visite anonymisées).</p>
-                <p>Pour exercer vos droits, veuillez me contacter par email à l&apos;adresse suivante : alixmiehe2004@gmail.com</p>
-              </div>
-            </div>
-            
-            <div>
+            {/* <div>
               <h3 className="text-xl font-semibold text-white mb-3">Cookies</h3>
               <div className="pl-6 text-slate-300">
-                <p>Ce site utilise des cookies techniques essentiels au bon fonctionnement du site. Ces cookies ne collectent pas d&apos;informations personnelles permettant de vous identifier.</p>
-                <p>Vous pouvez configurer votre navigateur pour refuser l&apos;utilisation de cookies. Cependant, cela pourrait affecter le fonctionnement du site.</p>
+                <p>This website uses technical cookies essential for the proper functioning of the site. These cookies do not collect personal information that could identify you.</p>
+                <p>You can configure your browser to refuse the use of cookies. However, this may affect the functioning of the website.</p>
               </div>
-            </div>
+            </div> */}
           </div>
           
           <p className="text-slate-400 text-center mt-8">
-            Dernière mise à jour : 8 mars 2025
+            Last updated: March 8, 2025
           </p>
         </div>
       </section>
-      
+
       {/* Footer with copyright */}
       <footer className="py-8 bg-slate-900 border-t border-slate-800">
         <div className="max-w-5xl mx-auto px-4 text-center text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Alix MIEHE. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Alix MIEHE. All rights reserved.</p>
         </div>
       </footer>
     </div>
