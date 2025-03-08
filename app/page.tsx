@@ -417,7 +417,7 @@ const Portfolio: React.FC = () => {
               <div className="pl-6 text-slate-300">
                 <p><strong>Company:</strong> Vercel</p>
                 <p><strong>Address:</strong> 650 California St, San Francisco, CA 94108, États-Unis </p>
-                <p><strong>Website:</strong> <a href="https://www.vercel.com" className="text-emerald-400 hover:underline">www.ovhcloud.com</a></p>
+                <p><strong>Website:</strong> <a href="https://www.vercel.com" className="text-emerald-400 hover:underline">www.vercel.com</a></p>
               </div>
             </div>
             
