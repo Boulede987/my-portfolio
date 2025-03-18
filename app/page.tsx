@@ -37,31 +37,30 @@ const Portfolio: React.FC = () => {
   
   // Projects state remains the same
   const [projects, setProjects] = useState<Project[]>([
-    // Your existing projects data remains unchanged
     {
       id: 1,
-      name: "Athena",
-      shortDescription: "I developped additionnal features for the Athena Open Source sofware during an internship.",
-      fullDescription: "A local school needed a way to produce physical access cards for its students, as a wayto identify them. It regularly accepts interns to develop the project. It is a C# application with a SQLite backend. It was fairly developped when I arrived, and my work consisted in adding the features as the schoolasked for them as well as correcting bugs. <a href=https://github.com/College-Caroline-Aigle/Athena>Click here to access the gitHub repository.<\a>",
-      technologies: ["C#", "SQLite", "GitHub"],
-      period: "06/01/24 - 07/02/24",
+      name: "Projet JPO",
+      shortDescription: "Development of a presentation system for Open House Day with real-time analytics.",
+      fullDescription: "My first PHP developpement project. A system for Open House Day visitors to fill in their informations, wich will be inscribed in a database. Includes a MySQL database backend for data analysis puproses.",
+      technologies: ["PHP", "MySQL", "HTML"],
+      period: "23/02/24 - 15/03/24",
       expanded: false,
-      imageUrl: "/images/Athena.png", // Add image URL
+      imageUrl: "/images/projetJPO.png", // Add image URL
       files: [
-        //
+        // { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
       ]
     },
     {
       id: 2,
-      name: "Crédit Célèste",
-      shortDescription: "An application for managing credits loaned by the (virtual) organisation Crédit Célèste. Includes credit monthly cost calculation, and calculation the distribution of the payment between the Crédit Célèste and the salesman. Still a WIP",
-      fullDescription: "With a C# front end and a windows server back end, this application lets the user register clients, vehicles, salesmen and loans. It can afterwards calculate how much money each salesman that made a credit sales has made, as well as how much the Crédit Célèste has made, in a monthly manner.",
-      technologies: ["PHP", "MySQL", "HTML", "GitHub"],
-      period: "02/10/24 - today",
+      name: "Projet Fournil",
+      shortDescription: "A PHP website made for a (virtual) local bakery with account creation and an order placement system.",
+      fullDescription: "A website made in accordance to a (virtual) client&#39;s demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
+      technologies: ["PHP", "MySQL"],
+      period: "12/04/24 - 15/07/24",
       expanded: false,
-      imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
+      imageUrl: "/images/fournil.png", // Add image URL
       files: [
-        // { name: "Contexte.rar", url: "/files/Contexte.rar" }
+        // { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
       ]
     },
     {
@@ -79,32 +78,19 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 4,
-      name: "Projet JPO",
-      shortDescription: "Development of a presentation system for Open House Day with real-time analytics.",
-      fullDescription: "My first PHP developpement project. A system for Open House Day visitors to fill in their informations, wich will be inscribed in a database. Includes a MySQL database backend for data analysis puproses.",
-      technologies: ["PHP", "MySQL", "HTML"],
-      period: "23/02/24 - 15/03/24",
+      name: "Crédit Célèste",
+      shortDescription: "An application for managing credits loaned by the (virtual) organisation Crédit Célèste. Includes credit monthly cost calculation, and calculation the distribution of the payment between the Crédit Célèste and the salesman. Still a WIP",
+      fullDescription: "With a C# front end and a windows server back end, this application lets the user register clients, vehicles, salesmen and loans. It can afterwards calculate how much money each salesman that made a credit sales has made, as well as how much the Crédit Célèste has made, in a monthly manner.",
+      technologies: ["PHP", "MySQL", "HTML", "GitHub"],
+      period: "02/10/24 - today",
       expanded: false,
-      imageUrl: "/images/projetJPO.png", // Add image URL
+      imageUrl: "/images/MCD_CreditCeleste.png", // Add image URL
       files: [
-        // { name: "finaleJPO.rar", url: "/files/finaleJPO.rar" }
+        // { name: "Contexte.rar", url: "/files/Contexte.rar" }
       ]
     },
     {
       id: 5,
-      name: "Projet Fournil",
-      shortDescription: "A PHP website made for a (virtual) local bakery with account creation and an order placement system.",
-      fullDescription: "A website made in accordance to a (virtual) client&#39;s demands. Includes MySQL users, a sign up and a login system, as well as an order placement system all linking back to the mySQL database.",
-      technologies: ["PHP", "MySQL"],
-      period: "12/04/24 - 15/07/24",
-      expanded: false,
-      imageUrl: "/images/fournil.png", // Add image URL
-      files: [
-        // { name: "projet V1.5.rar", url: "/files/projet V1.5.rar" }
-      ]
-    },
-    {
-      id: 6,
       name: "Criées de la Cornouaille",
       shortDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular. Still a WIP",
       fullDescription: "A Symfony PHP website for participating in an auction, paired with a mobile app made with IONIC/CAPACITOR/Angular. Still a WIP",
@@ -114,6 +100,19 @@ const Portfolio: React.FC = () => {
       imageUrl: "/images/CrieeCornouialle.png", // Add image URL
       files: [
         // { name: "MCD.rar", url: "/files/MCD.rar" }
+      ]
+    },
+    {
+      id: 6,
+      name: "Athena",
+      shortDescription: "I developped additionnal features for the Athena Open Source sofware during an internship.",
+      fullDescription: "A local school needed a way to produce physical access cards for its students, as a wayto identify them. It regularly accepts interns to develop the project. It is a C# application with a SQLite backend. It was fairly developped when I arrived, and my work consisted in adding the features as the schoolasked for them as well as correcting bugs. <a href=https://github.com/College-Caroline-Aigle/Athena>Click here to access the gitHub repository.<\a>",
+      technologies: ["C#", "SQLite", "GitHub"],
+      period: "06/01/24 - 07/02/24",
+      expanded: false,
+      imageUrl: "/images/Athena.png", // Add image URL
+      files: [
+        //
       ]
     },
     {
@@ -416,7 +415,7 @@ const Portfolio: React.FC = () => {
               <h3 className="text-xl font-semibold text-white mb-3">Hosting</h3>
               <div className="pl-6 text-slate-300">
                 <p><strong>Company:</strong> Vercel</p>
-                <p><strong>Address:</strong> 650 California St, San Francisco, CA 94108, États-Unis </p>
+                <p><strong>Address:</strong> 650 California St, San Francisco, CA 94108, United States </p>
                 <p><strong>Website:</strong> <a href="https://www.vercel.com" className="text-emerald-400 hover:underline">www.vercel.com</a></p>
               </div>
             </div>
