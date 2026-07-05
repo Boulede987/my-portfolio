@@ -10,6 +10,7 @@ interface Props {
 
 const ProjectsSection = ({ projects }: Props) => {
   const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
+  const [showAll, setShowAll] = useState(false);
 
   const toggleProject = (id: number) => {
     setExpandedIds((prev) => {
@@ -19,12 +20,22 @@ const ProjectsSection = ({ projects }: Props) => {
     });
   };
 
+  const visible = showAll ? projects : projects.filter((p) => p.featured);
+
   return (
     <section id="projects" className="py-16 bg-slate-800/50 px-4">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-white">Selected Projects</h2>
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="text-3xl font-bold text-white">Selected Projects</h2>
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="text-sm text-slate-400 hover:text-emerald-400 transition-colors underline underline-offset-2"
+          >
+            {showAll ? 'Show featured only' : 'Show all projects'}
+          </button>
+        </div>
         <div className="flex flex-col gap-6">
-          {projects.map((project) => (
+          {visible.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}

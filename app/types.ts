@@ -10,6 +10,7 @@ export interface Project {
   fullDescription: string;
   technologies: string[];
   period: string;
+  featured: boolean;
   imageUrl?: string;
   repositoryUrl?: string;
   files: ProjectFile[];
