@@ -43,7 +43,7 @@ const LegalSection = () => (
         </div>
       </div>
 
-      <p className="text-slate-400 text-center mt-8">Last updated: March 8, 2025</p>
+      <p className="text-slate-400 text-center mt-8">Last updated: July 5, 2026</p>
     </div>
   </section>
 );
