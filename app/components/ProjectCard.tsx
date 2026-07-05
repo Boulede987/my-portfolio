@@ -10,6 +10,7 @@ interface Props {
 
 const ProjectCard = ({ project, expanded, onToggle }: Props) => {
   const hasFiles = project.files.length > 0;
+  const hasMore = project.shortDescription !== project.fullDescription;
 
   return (
     <div className="bg-slate-800 rounded-lg shadow-lg overflow-hidden hover:ring-1 hover:ring-emerald-500/50 transition-all">
@@ -39,49 +40,51 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
               </div>
             </div>
 
-            <p className="text-slate-400 mb-4">{hasFiles ? project.shortDescription : project.fullDescription}</p>
+            <p className="text-slate-400 mb-4">{project.shortDescription}</p>
 
-            {project.repositoryUrl && (
-              <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline text-sm">
-                View repository →
-              </a>
-            )}
-
-            {hasFiles && (
-              <button
-                onClick={() => onToggle(project.id)}
-                className="flex items-center text-emerald-400 hover:text-emerald-300 transition-colors mt-2"
-              >
-                {expanded ? 'Show less' : 'Show more'}
-                {expanded ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
-              </button>
-            )}
+            <div className="flex flex-wrap items-center gap-4">
+              {project.repositoryUrl && (
+                <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline text-sm">
+                  View repository →
+                </a>
+              )}
+              {hasMore && (
+                <button
+                  onClick={() => onToggle(project.id)}
+                  className="flex items-center text-emerald-400 hover:text-emerald-300 transition-colors text-sm"
+                >
+                  {expanded ? 'Show less' : 'Show more'}
+                  {expanded ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+                </button>
+              )}
+            </div>
           </div>
 
-          {expanded && hasFiles && (
+          {expanded && hasMore && (
             <div className="px-6 pb-6 pt-2 border-t border-slate-700 bg-slate-900/50">
-              <h4 className="font-medium mb-3 text-white">Project Details</h4>
               <p className="text-slate-400 mb-6">{project.fullDescription}</p>
-              <div>
-                <h4 className="font-medium mb-3 flex items-center text-white">
-                  <FileText size={18} className="mr-2" />
-                  Project Files
-                </h4>
-                <ul className="space-y-2">
-                  {project.files.map((file) => (
-                    <li key={file.name}>
-                      <a
-                        href={file.url}
-                        download
-                        className="flex items-center p-2 bg-slate-800 hover:bg-slate-700 rounded border border-slate-600 text-slate-400 hover:text-emerald-400 transition-colors"
-                      >
-                        <span className="flex-1">{file.name}</span>
-                        <Download size={16} />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {hasFiles && (
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-white">
+                    <FileText size={18} className="mr-2" />
+                    Project Files
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.files.map((file) => (
+                      <li key={file.name}>
+                        <a
+                          href={file.url}
+                          download
+                          className="flex items-center p-2 bg-slate-800 hover:bg-slate-700 rounded border border-slate-600 text-slate-400 hover:text-emerald-400 transition-colors"
+                        >
+                          <span className="flex-1">{file.name}</span>
+                          <Download size={16} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           )}
         </div>

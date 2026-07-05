@@ -20,6 +20,7 @@ const projects: Project[] = [
     technologies: ["Unity", "C#", "PlantUML"],
     period: "2024 - 2025",
     featured: true,
+    repositoryUrl: "https://gitlab.com/matteo-renaud/pac-man.git",
     files: [],
   },
   {
@@ -30,6 +31,7 @@ const projects: Project[] = [
     technologies: ["Docker", "Ansible", "PlantUML"],
     period: "ongoing",
     featured: true,
+    repositoryUrl: "https://github.com/Boulede987/Al-Kartel.git",
     files: [],
   },
   {
