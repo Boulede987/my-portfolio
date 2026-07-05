@@ -64,6 +64,15 @@ const projects: Project[] = [
   },
   {
     id: 7,
+    name: "Pacman Clone",
+    shortDescription: "A Pacman clone in Unity developed over ~6 months during coursework, featuring a map editor, customizable parameters, and a trained AI to control Pacman.",
+    fullDescription: "Developed as part of a group project during my BTS SIO coursework. Features a map editor, customizable parameters (number of lives, Pacman speed, etc.), and an AI we trained ourselves to control Pacman during gameplay. The AI learned to eat all pellets on the map, but we could not finish training it to beat the game with all ghosts present.",
+    technologies: ["Unity", "C#"],
+    period: "2024 - 2025",
+    files: [],
+  },
+  {
+    id: 8,
     name: "pyVeil",
     shortDescription: "Using Python and the Ollama library, I extract Google search results and run a local LLM to summarize and evaluate articles. Still a WIP.",
     fullDescription: "Using Python and the Ollama library, I extract Google search results from the Google Custom Search Engine JSON API and save them. I can then run a LLM locally to summarize the articles, check if the articles are relevant or credible, and more. Still a WIP.",
