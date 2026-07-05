@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Gitlab, Linkedin, Mail, Download } from 'lucide-react';
 
 interface CvLink {
   label: string;
@@ -26,6 +26,9 @@ const HeroSection = () => (
       <div className="flex flex-wrap gap-4 mt-8 items-center">
         <a href="https://github.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
           <Github size={24} />
+        </a>
+        <a href="https://gitlab.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
+          <Gitlab size={24} />
         </a>
         <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
           <Linkedin size={24} />
