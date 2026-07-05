@@ -7,7 +7,7 @@ export interface Project {
   id: number;
   name: string;
   shortDescription: string;
-  fullDescription: string;
+  fullDescription?: string;
   technologies: string[];
   period: string;
   featured: boolean;
