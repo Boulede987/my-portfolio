@@ -18,7 +18,7 @@ const projects: Project[] = [
     id: 9,
     name: "Pacman Clone",
     shortDescription: "A Pacman clone in Unity developed over ~6 months during coursework, featuring a map editor, customizable parameters, and a trained AI to control Pacman.",
-    fullDescription: "Developed as part of a group project during my CNAM Engenieer coursework. Features a map editor, customizable parameters (number of lives, Pacman speed, etc.), and an AI we trained ourselves to control Pacman during gameplay. The AI learned to eat all pellets on the map, but we could not finish training it to beat the game with all ghosts present.",
+    fullDescription: "Developed as part of a group project during my CNAM Engenieer coursework. Features a map editor, customizable parameters (number of lives, Pacman speed, etc.), and an AI we trained ourselves to control Pacman during gameplay. The AI learned to eat all pellets on the map, but we could not finish training it to beat the game with all ghosts present. While we managed to have parallel training session and sped up time, it simply would have taken too long. This project features a state machine and a strategy pattern for ghosts; as well as an event bus for the map editor.",
     technologies: ["Unity", "C#", "PlantUML"],
     period: "2025 - 2026",
     featured: true,
