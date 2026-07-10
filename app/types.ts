@@ -3,6 +3,8 @@ export interface ProjectFile {
   url: string;
 }
 
+export type ProjectCategory = 'bts' | 'internship' | 'engineer' | 'work';
+
 export interface Project {
   id: number;
   name: string;
@@ -10,7 +12,7 @@ export interface Project {
   fullDescription?: string;
   technologies: string[];
   period: string;
-  featured: boolean;
+  category: ProjectCategory;
   imageUrl?: string;
   repositoryUrl?: string;
   files: ProjectFile[];

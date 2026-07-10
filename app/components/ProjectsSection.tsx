@@ -1,16 +1,28 @@
 'use client';
 
 import { useState } from 'react';
-import { Project } from '../types';
+import { Project, ProjectCategory } from '../types';
 import ProjectCard from './ProjectCard';
 
 interface Props {
   projects: Project[];
 }
 
+interface SectionDef {
+  key: ProjectCategory;
+  title: string;
+  emptyNote?: string;
+}
+
+const SECTIONS: SectionDef[] = [
+  { key: 'bts', title: 'BTS SIO' },
+  { key: 'internship', title: 'Internships' },
+  { key: 'engineer', title: 'CNAM Engineer' },
+  { key: 'work', title: 'Work', emptyNote: "Alternating weekly between work and coursework right now — first write-up coming soon." },
+];
+
 const ProjectsSection = ({ projects }: Props) => {
   const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
-  const [showAll, setShowAll] = useState(false);
 
   const toggleProject = (id: number) => {
     setExpandedIds((prev) => {
@@ -20,29 +32,35 @@ const ProjectsSection = ({ projects }: Props) => {
     });
   };
 
-  const visible = showAll ? projects : projects.filter((p) => p.featured);
-
   return (
     <section id="projects" className="py-16 bg-slate-800/50 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-white">Selected Projects</h2>
-          <button
-            onClick={() => setShowAll((prev) => !prev)}
-            className="text-sm text-slate-400 hover:text-emerald-400 transition-colors underline underline-offset-2"
-          >
-            {showAll ? 'Show featured only' : 'Show all projects'}
-          </button>
-        </div>
-        <div className="flex flex-col gap-6">
-          {visible.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              expanded={expandedIds.has(project.id)}
-              onToggle={toggleProject}
-            />
-          ))}
+        <h2 className="text-3xl font-bold text-white mb-12">Projects</h2>
+        <div className="flex flex-col gap-16">
+          {SECTIONS.map((section) => {
+            const sectionProjects = projects.filter((p) => p.category === section.key);
+            if (sectionProjects.length === 0 && !section.emptyNote) return null;
+
+            return (
+              <div key={section.key}>
+                <h3 className="text-xl font-semibold text-emerald-400 mb-6">{section.title}</h3>
+                {sectionProjects.length === 0 ? (
+                  <p className="text-slate-400 italic">{section.emptyNote}</p>
+                ) : (
+                  <div className="flex flex-col gap-6">
+                    {sectionProjects.map((project) => (
+                      <ProjectCard
+                        key={project.id}
+                        project={project}
+                        expanded={expandedIds.has(project.id)}
+                        onToggle={toggleProject}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
