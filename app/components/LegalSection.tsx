@@ -16,9 +16,7 @@ const LegalSection = () => (
           </h3>
           <div className="pl-6 text-slate-300 space-y-1">
             <p><strong>Name:</strong> Alix MIEHE</p>
-            <p><strong>Address:</strong> 6 Rue Curie, HOCHFELDEN 67270</p>
             <p><strong>Email:</strong> alixmiehe2004@gmail.com</p>
-            <p><strong>Phone:</strong> +33 6 44 87 67 57</p>
           </div>
         </div>
 
