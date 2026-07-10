@@ -32,35 +32,36 @@ const ProjectsSection = ({ projects }: Props) => {
     });
   };
 
-  return (
-    <section id="projects" className="py-16 bg-slate-800/50 px-4">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-12">Projects</h2>
-        <div className="flex flex-col gap-16">
-          {SECTIONS.map((section) => {
-            const sectionProjects = projects.filter((p) => p.category === section.key);
-            if (sectionProjects.length === 0 && !section.emptyNote) return null;
+  const visibleSections = SECTIONS.map((section) => ({
+    section,
+    sectionProjects: projects.filter((p) => p.category === section.key),
+  })).filter(({ sectionProjects, section }) => sectionProjects.length > 0 || section.emptyNote);
 
-            return (
-              <div key={section.key}>
-                <h3 className="text-xl font-semibold text-emerald-400 mb-6">{section.title}</h3>
-                {sectionProjects.length === 0 ? (
-                  <p className="text-slate-400 italic">{section.emptyNote}</p>
-                ) : (
-                  <div className="flex flex-col gap-6">
-                    {sectionProjects.map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        expanded={expandedIds.has(project.id)}
-                        onToggle={toggleProject}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+  return (
+    <section id="projects" className="py-16 bg-surface/50 px-4">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="font-display font-bold text-3xl text-bone mb-12">Projects</h2>
+        <div className="flex flex-col">
+          {visibleSections.map(({ section, sectionProjects }, i) => (
+            <div key={section.key}>
+              {i > 0 && <hr className="divider" />}
+              <h3 className="font-mono text-xs uppercase tracking-wider text-iron mb-6">{section.title}</h3>
+              {sectionProjects.length === 0 ? (
+                <p className="text-muted italic">{section.emptyNote}</p>
+              ) : (
+                <div className="flex flex-col gap-6">
+                  {sectionProjects.map((project) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      expanded={expandedIds.has(project.id)}
+                      onToggle={toggleProject}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

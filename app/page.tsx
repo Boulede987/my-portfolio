@@ -9,7 +9,7 @@ import LegalSection from './components/LegalSection';
 import Footer from './components/Footer';
 
 const Portfolio = () => (
-  <div className="min-h-screen bg-slate-900 text-white">
+  <div className="min-h-screen bg-ground text-bone font-sans">
     <Nav />
     <HeroSection />
     <ProjectsSection projects={projects} />

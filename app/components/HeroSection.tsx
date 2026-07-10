@@ -14,26 +14,29 @@ const CV_LINKS: CvLink[] = [
 
 const HeroSection = () => (
   <section id="about" className="pt-32 pb-16 px-4 relative">
-    <div className="absolute -top-8 -left-8 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+    <div className="absolute -top-8 -left-8 w-64 h-64 bg-ember/10 blur-3xl" />
     <div className="max-w-5xl mx-auto relative">
-      <h1 className="text-4xl font-bold mb-6">
-        Hello, I&apos;m <span className="text-emerald-400">Alix</span>
+      <span className="block font-mono text-xs uppercase tracking-wider text-iron mb-4">
+        Software &amp; application developer
+      </span>
+      <h1 className="font-display font-bold text-4xl md:text-5xl mb-6 text-bone">
+        Hello, I&apos;m <span className="text-ember-bright">Alix</span>
       </h1>
-      <p className="text-xl text-slate-400 max-w-2xl">
+      <p className="text-xl text-muted max-w-2xl">
         I&apos;m a developer specializing in software and application development, with a strong foundation
         in networking and a keen interest in emerging technologies like AI development.
       </p>
       <div className="flex flex-wrap gap-4 mt-8 items-center">
-        <a href="https://github.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
+        <a href="https://github.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
           <Github size={24} />
         </a>
-        <a href="https://gitlab.com/Boulede987" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
+        <a href="https://gitlab.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
           <Gitlab size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
+        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-muted hover:text-iron transition-colors">
           <Linkedin size={24} />
         </a>
-        <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-slate-400 hover:text-emerald-400 transition-colors">
+        <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-muted hover:text-iron transition-colors">
           <Mail size={24} />
         </a>
         <div className="flex flex-wrap gap-2">
@@ -42,7 +45,7 @@ const HeroSection = () => (
               key={file}
               href={`/files/${file}`}
               download
-              className="flex items-center gap-2 px-3 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors text-sm"
+              className="flex items-center gap-2 px-3 py-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors text-sm font-mono"
             >
               <Download size={16} />
               {label}

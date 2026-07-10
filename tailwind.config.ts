@@ -9,8 +9,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        ground: "var(--ground)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        iron: "var(--iron)",
+        ember: "var(--ember)",
+        "ember-bright": "var(--ember-bright)",
+        bone: "var(--bone)",
+        muted: "var(--muted)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "Arial", "Helvetica", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "Consolas", "monospace"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
     },
   },
