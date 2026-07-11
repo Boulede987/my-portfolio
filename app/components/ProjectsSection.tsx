@@ -17,7 +17,7 @@ interface SectionDef {
 const SECTIONS: SectionDef[] = [
   { key: 'work', title: 'Work', emptyNote: "Alternating weekly between work and coursework right now — first write-up coming soon." },
   { key: 'engineer', title: 'CNAM Engineer' },
-  { key: 'internship', title: 'Internships' },
+  { key: 'internship', title: 'BTS SIO Internships' },
   { key: 'bts', title: 'BTS SIO' },
 ];
 
