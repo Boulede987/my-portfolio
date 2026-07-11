@@ -15,10 +15,10 @@ interface SectionDef {
 }
 
 const SECTIONS: SectionDef[] = [
-  { key: 'bts', title: 'BTS SIO' },
-  { key: 'internship', title: 'Internships' },
-  { key: 'engineer', title: 'CNAM Engineer' },
   { key: 'work', title: 'Work', emptyNote: "Alternating weekly between work and coursework right now — first write-up coming soon." },
+  { key: 'engineer', title: 'CNAM Engineer' },
+  { key: 'internship', title: 'Internships' },
+  { key: 'bts', title: 'BTS SIO' },
 ];
 
 const ProjectsSection = ({ projects }: Props) => {
