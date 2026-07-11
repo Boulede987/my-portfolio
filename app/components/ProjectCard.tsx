@@ -14,14 +14,23 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
 
   return (
     <div className="corner-frame bg-surface overflow-hidden hover:ring-1 hover:ring-ember-bright/40 transition-all">
-      <div className="flex flex-col md:flex-row">
+      <div className={`flex flex-col ${expanded ? '' : 'md:flex-row'} transition-all duration-500 ease-in-out`}>
         {project.imageUrl && (
-          <div className="w-full md:w-1/3 relative min-h-[200px]">
-            <Image src={project.imageUrl} alt={`${project.name} preview`} fill className="object-cover" />
+          <div
+            className={`relative transition-all duration-500 ease-in-out ${
+              expanded ? 'w-full aspect-video bg-ground' : 'w-full md:w-1/3 min-h-[200px]'
+            }`}
+          >
+            <Image
+              src={project.imageUrl}
+              alt={`${project.name} preview`}
+              fill
+              className={`transition-all duration-500 ease-in-out ${expanded ? 'object-contain' : 'object-cover'}`}
+            />
           </div>
         )}
 
-        <div className={`w-full ${project.imageUrl ? 'md:w-2/3' : ''}`}>
+        <div className={`w-full ${project.imageUrl && !expanded ? 'md:w-2/3' : ''}`}>
           <div className="p-6">
             <div className="flex justify-between items-start mb-4">
               <div>
