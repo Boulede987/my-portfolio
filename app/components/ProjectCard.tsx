@@ -51,10 +51,10 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
               {hasMore && (
                 <button
                   onClick={() => onToggle(project.id)}
-                  className="flex items-center text-iron hover:text-bone transition-colors text-sm"
+                  className="flex items-center gap-1 px-3 py-1.5 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors text-sm font-mono uppercase tracking-wider"
                 >
                   {expanded ? 'Show less' : 'Show more'}
-                  {expanded ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+                  {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 </button>
               )}
             </div>
