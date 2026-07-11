@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Calendar, ChevronDown, ChevronUp, Download, FileText } from 'lucide-react';
 import { Project } from '../types';
+import FormattedText from './FormattedText';
 
 interface Props {
   project: Project;
@@ -49,7 +50,9 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
               </div>
             </div>
 
-            <p className="text-muted mb-4">{project.shortDescription}</p>
+            <div className="text-muted mb-4">
+              <FormattedText text={project.shortDescription} />
+            </div>
 
             <div className="flex flex-wrap items-center gap-4">
               {project.repositoryUrl && (
@@ -71,7 +74,9 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
 
           {expanded && hasMore && (
             <div className="px-6 pb-6 pt-2 border-t border-iron/20 bg-ground/50">
-              <p className="text-muted mb-6">{project.fullDescription ?? ''}</p>
+              <div className="text-muted mb-6">
+                <FormattedText text={project.fullDescription ?? ''} />
+              </div>
               {hasFiles && (
                 <div>
                   <h4 className="font-display font-bold mb-3 flex items-center text-bone">
