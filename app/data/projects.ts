@@ -2,10 +2,19 @@ import { Project } from '../types';
 
 const projects: Project[] = [
   {
+    id: 11,
+    name: "AI Optimization",
+    shortDescription: "TODO: fill in.",
+    technologies: [],
+    period: "ongoing",
+    category: "work",
+    files: [],
+  },
+  {
     id: 10,
     name: "Al-Kartel",
     shortDescription: "An ongoing project. The objective will be an architecture that allows to manage and deploy scripts on machines on the same local network. These scripts will then interact with the Rainbow app, making demos.",
-    fullDescription: "My part in this project is project management ; distribution of tasks and planning.",
+    fullDescription: "My part in this project is project management ; distribution of tasks, planning, updating Gantt.",
     technologies: ["Docker", "Ansible", "PlantUML"],
     period: "ongoing",
     category: "engineer",

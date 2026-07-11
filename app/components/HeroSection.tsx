@@ -17,14 +17,13 @@ const HeroSection = () => (
     <div className="absolute -top-8 -left-8 w-64 h-64 bg-ember/10 blur-3xl" />
     <div className="max-w-5xl mx-auto relative">
       <span className="block font-mono text-xs uppercase tracking-wider text-iron mb-4">
-        Software &amp; application developer
+        Engineering student, CNAM · Software developer
       </span>
       <h1 className="font-display font-bold text-4xl md:text-5xl mb-6 text-bone">
-        Hello, I&apos;m <span className="text-ember-bright">Alix</span>
+        Welcome. I am <span className="text-ember-bright">Alix MIEHE</span>.
       </h1>
       <p className="text-xl text-muted max-w-2xl">
-        I&apos;m a developer specializing in software and application development, with a strong foundation
-        in networking and a keen interest in emerging technologies like AI development.
+        I want to work on making long-lived maintainable systems to ease expantion and the realisation of new ideas.
       </p>
       <div className="flex flex-wrap gap-4 mt-8 items-center">
         <a href="https://github.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
