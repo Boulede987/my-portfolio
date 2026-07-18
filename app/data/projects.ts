@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     id: 9,
     name: "Claude Code Optimization Repo",
-    shortDescription: "To sharpen my skills using AI effectively, I'm building a set of tools to help me take better control of it. Very much in the experimental phase.",
+    shortDescription: "To sharpen my skills using AI effectively, I'm building a set of tools to help me take better control of it.",
     fullDescription: "This includes:\n- Skills with coding rules\n- Documentation generation\n- Session handoff management\n- A loop guard to avoid running in circles with the AI",
     technologies: ["Claude Code"],
     period: "ongoing",
