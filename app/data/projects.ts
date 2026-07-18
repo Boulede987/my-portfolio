@@ -2,7 +2,7 @@ import { Project } from '../types';
 
 const projects: Project[] = [
   {
-    id: 11,
+    id: 12,
     name: "COBOL and Mainframe systems",
     shortDescription: "I work at Euro-Information, the firm responsible for software development for the Crédit Mutuel Group, one of the biggest banks in France. There I work with very old Information Systems written in COBOL.",
     fullDescription: "I make a point of fully understanding the decisions made in our architecture, while doing my best to improve the maintainability of our systems with modern practices.\n\nThis work brings forth much thought about:\n- Testing strategies for legacy systems\n- Architecture decisions made long before I arrived\n- Good coding practices for long-lived maintainability\n\nOne of my current goals is building a unit testing solution for our COBOL programs, to track regressions dynamically as the system grows.",
@@ -12,7 +12,7 @@ const projects: Project[] = [
     files: [],
   },
   {
-    id: 11,
+    id: 9,
     name: "Claude Code Optimization Repo",
     shortDescription: "To improve my skills with the usage of AI to improve my efficiency, I am working on a set of tools to help me take better control of the AI. Very much in the experimental phase.",
     fullDescription: "This includes:\n- Skills with coding rules\n- Documentation generation\n- Session handoff management\n- A loop guard to avoid running in circles with the AI",
@@ -23,7 +23,7 @@ const projects: Project[] = [
     files: [],
   },
   {
-    id: 10,
+    id: 11,
     name: "Al-Kartel",
     shortDescription: "An ongoing project. The objective will be an architecture that allows to manage and deploy scripts on machines on the same local network. These scripts will then interact with the Rainbow app, making demos.",
     fullDescription: "My part in this project is project management: distribution of tasks, planning, updating the Gantt chart. Very early in development, this project is challenging me to learn new skills in a leadership role.",
@@ -35,7 +35,7 @@ const projects: Project[] = [
     files: [],
   },
   {
-    id: 9,
+    id: 10,
     name: "Pacman Clone",
     shortDescription: "Developed as part of a group project during my CNAM Engineer coursework, as a clone of Pacman. Features a map editor, customizable parameters (number of lives, Pacman speed, etc.), and a neural network we trained ourselves through reinforcement learning to control Pacman during gameplay.",
     fullDescription: "In this project we worked on reusable software through the use of design patterns such as strategies for ghost movement and targeting, wired through a state machine to easily switch from one set of patterns to another. Each ghost has states (chase, scatter, home...), and each state has a different behavior:\n- Targets a different location (home when returning home, Pacman when chasing)\n- Moves differently (randomly when fleeing, or using different algorithms when chasing)\n\nThis design allows easy reuse of code when logic is shared (all fleeing ghosts use the exact same movement strategy class, but each has its own strategy for movement when chasing Pacman), and decouples the state from the implemented behavior: a state only knows that it is chasing, not which strategy is used. It is the Unity prefab that knows exactly which ghost uses which strategy, decoupling them from each other in the code.\n\nAnother strong part of this project was the neural network controlling Pacman, trained by us through reinforcement learning. To accelerate the process, we chose to do incremental learning, and used time acceleration and simultaneous parallel training sessions.\n\nThe map editor also uses an event bus, to communicate to the cursor which brush was selected without coupling brush logic to the menu selection logic.",
