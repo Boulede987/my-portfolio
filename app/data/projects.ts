@@ -48,7 +48,7 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    name: "Projet MIEHE Alix",
+    name: "Angular Project",
     shortDescription: "An Angular app, featuring two-way binding, JWT authentication, and an API to securely access a database. Built to introduce us to the Angular framework, as well as secure web design using techniques such as JWT authentication and packet interception.",
     fullDescription: "It features user creation, with profile management (admin, user, etc):\n- Lets an authenticated user save content as favorites\n- Lets an authenticated user create content to share with other users\n- Uses a store to save data locally\n- Uses guards to safeguard against accessing unauthorized pages or content\n- Uses services and components to make the code more reusable",
     technologies: ["Angular", "TypeScript", "HTML", "SCSS"],
