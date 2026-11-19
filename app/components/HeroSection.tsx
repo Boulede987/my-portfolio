@@ -6,10 +6,10 @@ interface CvLink {
 }
 
 const CV_LINKS: CvLink[] = [
+  { label: 'EN Modern',    file: 'cv_modern_en.pdf'   },
   { label: 'EN Classic',   file: 'cv_classic_en.pdf'  },
-  { label: 'EN Stylized',  file: 'cv_stylized_en.pdf' },
+  { label: 'FR Moderne',   file: 'cv_modern_fr.pdf'   },
   { label: 'FR Classique', file: 'cv_classic_fr.pdf'  },
-  { label: 'FR Stylisé',   file: 'cv_stylized_fr.pdf' },
 ];
 
 const HeroSection = () => (
