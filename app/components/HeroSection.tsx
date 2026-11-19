@@ -23,7 +23,7 @@ const HeroSection = () => (
         Welcome. I am <span className="text-ember-bright">Alix MIEHE</span>.
       </h1>
       <p className="text-xl text-muted max-w-2xl">
-        I want to work on making long-lived maintainable systems to ease expantion and the realisation of new ideas.
+        I aim to write quality code and sound architecture, so systems stay easy to maintain and extend — from Unity games and web applications to long-lived COBOL systems.
       </p>
       <div className="flex flex-wrap gap-4 mt-8 items-center">
         <a href="https://github.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
