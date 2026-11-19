@@ -3,7 +3,7 @@ export interface ProjectFile {
   url: string;
 }
 
-export type ProjectCategory = 'bts' | 'internship' | 'engineer' | 'work';
+export type ProjectCategory = 'bts' | 'internship' | 'engineer' | 'personal' | 'work';
 
 export interface Project {
   id: number;

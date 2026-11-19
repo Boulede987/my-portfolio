@@ -42,7 +42,7 @@ const projects: Project[] = [
     fullDescription: "Working with an AI agent makes it easy to lose track of what is being built, and to end up approving work I no longer understand. This plugin keeps me responsible for the result:\n- Feature workflow: one increment at a time through Spec, Build, Review, Commit and Report. Each phase needs my explicit validation; a skipped gate is logged, never silent. Progress is saved to disk, so work resumes across sessions.\n- Design before code: the AI draws the proposed classes as a UML diagram within the existing code and lists the files it will touch, before writing anything.\n- Coding standards as skills: architecture (SOLID, DRY), function design, naming, error handling, type safety and testing rules, applied automatically.\n- Traceability: decisions are recorded as ADRs, documentation is generated from code by a script rather than written by the AI, and commits follow strict conventions.\n- Guard rails: a loop guard stops the AI when it keeps retrying a failing approach, and a hook keeps it speaking as a tool rather than as a teammate.\n\nIt builds on Matt Pocock's skills (TDD, code review, domain modeling) and complements them without duplicating them. Each design choice is recorded as an ADR.",
     technologies: ["Claude Code", "PlantUML", "Git"],
     period: "ongoing",
-    category: "engineer",
+    category: "personal",
     repositoryUrl: "https://github.com/Boulede987/dotfiles-claude.git",
     files: [],
   },
