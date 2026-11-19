@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Award, Download } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 import { Certification } from '../types';
 
 interface Props {
@@ -24,12 +24,13 @@ const CertificationCard = ({ cert }: Props) => (
       {cert.description && <p className="text-muted mb-6 flex-grow">{cert.description}</p>}
       <a
         href={cert.fileUrl}
-        download
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-auto flex items-center justify-center gap-2 p-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors font-mono text-sm"
       >
         <Award size={18} />
         <span>View Certificate</span>
-        <Download size={18} />
+        <ExternalLink size={18} />
       </a>
     </div>
   </div>

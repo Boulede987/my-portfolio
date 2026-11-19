@@ -26,16 +26,16 @@ const HeroSection = () => (
         I aim to write quality code and sound architecture, so systems stay easy to maintain and extend — from Unity games and web applications to long-lived COBOL systems.
       </p>
       <div className="flex flex-wrap gap-4 mt-8 items-center">
-        <a href="https://github.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://github.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-muted hover:text-iron transition-colors">
           <Github size={24} />
         </a>
-        <a href="https://gitlab.com/Boulede987" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://gitlab.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitLab" className="p-2 text-muted hover:text-iron transition-colors">
           <Gitlab size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-muted hover:text-iron transition-colors">
           <Linkedin size={24} />
         </a>
-        <a href="mailto:alixmiehe2004@gmail.com" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="mailto:alixmiehe2004@gmail.com" aria-label="Email" className="p-2 text-muted hover:text-iron transition-colors">
           <Mail size={24} />
         </a>
         <div className="flex flex-wrap gap-2">
