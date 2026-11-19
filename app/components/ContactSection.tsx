@@ -5,7 +5,7 @@ const ContactSection = () => (
       <p className="text-muted mb-8">I&apos;m always open to exploring new horizons and working on interesting projects.</p>
       <a
         href="mailto:alixmiehe2004@gmail.com"
-        className="inline-flex items-center px-6 py-3 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors font-mono text-sm uppercase tracking-wider"
+        className="inline-flex items-center px-6 py-3 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright press-feedback font-mono text-sm uppercase tracking-wider"
       >
         Contact Me
       </a>

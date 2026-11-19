@@ -29,6 +29,29 @@ html {
   }
 }
 
+/* Button feedback: a warm tint on hover, a slight press-in on click */
+@layer components {
+  .press-feedback {
+    transition: color 150ms ease-out, border-color 150ms ease-out,
+      background-color 150ms ease-out, transform 100ms ease-out;
+  }
+
+  .press-feedback:hover {
+    background-color: rgba(181, 71, 63, 0.1); /* --ember-bright at 10% */
+  }
+
+  .press-feedback:active {
+    background-color: rgba(181, 71, 63, 0.2);
+    transform: scale(0.95);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .press-feedback:active {
+      transform: none;
+    }
+  }
+}
+
 /* Visible keyboard focus on every interactive element */
 a:focus-visible,
 button:focus-visible {

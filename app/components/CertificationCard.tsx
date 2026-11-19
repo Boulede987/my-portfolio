@@ -26,7 +26,7 @@ const CertificationCard = ({ cert }: Props) => (
         href={cert.fileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-auto flex items-center justify-center gap-2 p-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors font-mono text-sm"
+        className="mt-auto flex items-center justify-center gap-2 p-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright press-feedback font-mono text-sm"
       >
         <Award size={18} />
         <span>View Certificate</span>

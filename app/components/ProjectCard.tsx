@@ -77,7 +77,7 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
                   onClick={handleToggle}
                   aria-expanded={expanded}
                   aria-controls={detailsId}
-                  className="flex items-center gap-1 px-3 py-1.5 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors text-sm font-mono uppercase tracking-wider"
+                  className="flex items-center gap-1 px-3 py-1.5 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright press-feedback text-sm font-mono uppercase tracking-wider"
                 >
                   {expanded ? 'Show less' : 'Show more'}
                   <ChevronDown
@@ -117,7 +117,7 @@ const ProjectCard = ({ project, expanded, onToggle }: Props) => {
                         <a
                           href={file.url}
                           download
-                          className="flex items-center p-2 bg-surface hover:bg-surface-2 border border-iron/30 text-muted hover:text-iron transition-colors"
+                          className="flex items-center p-2 bg-surface hover:bg-surface-2 border border-iron/30 text-muted hover:text-iron press-feedback"
                         >
                           <span className="flex-1">{file.name}</span>
                           <Download size={16} />

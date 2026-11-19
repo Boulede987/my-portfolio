@@ -26,16 +26,16 @@ const HeroSection = () => (
         I aim to write quality code and sound architecture, so systems stay easy to maintain and extend — from Unity games and web applications to long-lived COBOL systems.
       </p>
       <div className="flex flex-wrap gap-4 mt-8 items-center">
-        <a href="https://github.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://github.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-muted hover:text-iron press-feedback">
           <Github size={24} />
         </a>
-        <a href="https://gitlab.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitLab" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://gitlab.com/Boulede987" target="_blank" rel="noopener noreferrer" aria-label="GitLab" className="p-2 text-muted hover:text-iron press-feedback">
           <Gitlab size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="https://www.linkedin.com/in/alix-miehe-94239b290/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-muted hover:text-iron press-feedback">
           <Linkedin size={24} />
         </a>
-        <a href="mailto:alixmiehe2004@gmail.com" aria-label="Email" className="p-2 text-muted hover:text-iron transition-colors">
+        <a href="mailto:alixmiehe2004@gmail.com" aria-label="Email" className="p-2 text-muted hover:text-iron press-feedback">
           <Mail size={24} />
         </a>
         <div className="flex flex-wrap gap-2">
@@ -44,7 +44,7 @@ const HeroSection = () => (
               key={file}
               href={`/files/${file}`}
               download
-              className="flex items-center gap-2 px-3 py-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright transition-colors text-sm font-mono"
+              className="flex items-center gap-2 px-3 py-2 border border-iron/40 text-bone hover:border-ember-bright hover:text-ember-bright press-feedback text-sm font-mono"
             >
               <Download size={16} />
               {label}
