@@ -47,6 +47,17 @@ const projects: Project[] = [
     files: [],
   },
   {
+    id: 13,
+    name: "MineUtz: Minecraft Modpack and World Generation Mod",
+    shortDescription: "A NeoForge modpack (~260 mods) managed as code, with a Java companion mod that replaces Minecraft's biome placement and a Python pipeline that maps the modpack's data into a Neo4j graph.",
+    fullDescription: "The modpack runs on Minecraft 1.21.1 with NeoForge and is managed as code with packwiz and Git: every mod addition or update is a readable commit, alongside configuration, KubeJS scripts and an FTB Quests quest book.\n\nThe companion mod (Java 21, Gradle, ~21k lines with tests) replaces Minecraft's biome selection with a custom BiomeSource:\n- Each biome declares the terrain types it can appear on, a patch size range, a weight and preferred or forbidden neighbors\n- A seeded growth algorithm grows biome patches from deterministic starting points, so a mountain biome can never spread onto flat land\n- A graph editor checks whether a set of placement rules can be satisfied, measures how often seeds fail, and ranks the rules that cause failures\n\nA Python pipeline extracts items, recipes, biomes, structures and loot tables from the mod files and loads them into Neo4j, explored through a web interface built with Cytoscape.js.\n\nDesign decisions are recorded with their context and evidence, and class diagrams are regenerated from the code as it changes.",
+    technologies: ["Java", "NeoForge", "Gradle", "Python", "Neo4j", "JavaScript", "KubeJS", "packwiz"],
+    period: "02/2026 - ongoing",
+    category: "personal",
+    repositoryUrl: "https://github.com/Boulede987/Mine-Utz",
+    files: [],
+  },
+  {
     id: 8,
     name: "Angular Web Application",
     shortDescription: "CNAM project: an Angular web application with user accounts and roles, favorites and content sharing between users, secured with JWT authentication, route guards and an API for database access.",
