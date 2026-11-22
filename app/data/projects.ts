@@ -5,7 +5,7 @@ const projects: Project[] = [
     id: 12,
     name: "COBOL and Mainframe Systems",
     shortDescription: "Apprentice software engineer at Euro-Information, the IT company of the Crédit Mutuel group. I develop enhancements to transactional and batch COBOL programs on IBM mainframe, in the insurance sector.",
-    fullDescription: "My work covers transactional and batch COBOL programs using DB2 and JCL, developed in RDz within a V-model process. I also contribute to the team's web applications, that display database data.\n\nWorking on long-lived systems raises interesting questions:\n- Testing strategies for legacy code\n- Understanding architecture decisions made long before I arrived\n- Coding practices that keep a system maintainable over time\n\nOn my own, I am building a unit testing tool for COBOL from scratch, to catch regressions as the system evolves. It is at the proof-of-concept stage, and the team intends to adopt it.",
+    fullDescription: "My work covers transactional and batch COBOL programs using DB2 and JCL, developed in RDz within a V-model process. I also contribute to the team's web applications that display database data.\n\nWorking on long-lived systems raises interesting questions:\n- Testing strategies for legacy code\n- Understanding architecture decisions made long before I arrived\n- Coding practices that keep a system maintainable over time\n\nOn my own, I am building a unit testing tool for COBOL from scratch, to catch regressions as the system evolves. It is a proof of concept, which the team may adopt.",
     technologies: ["COBOL", "DB2", "JCL", "IBM Mainframe", "RDz"],
     period: "ongoing",
     category: "work",
